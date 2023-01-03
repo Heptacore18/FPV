@@ -2,6 +2,7 @@ package com.example.fpv
 
 import android.support.v7.app.AppCompatActivity
 import android.annotation.SuppressLint
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.VideoView
 import com.example.fpv.databinding.ActivityVideoBinding
 
 /**
@@ -26,6 +28,9 @@ class VideoActivity : AppCompatActivity() {
     private lateinit var fullscreenContent: TextView
     private lateinit var fullscreenContentControls: LinearLayout
     private val hideHandler = Handler(Looper.myLooper()!!)
+
+    private lateinit var video : VideoView
+    private lateinit var videoURL : String
 
     @SuppressLint("InlinedApi")
     private val hidePart2Runnable = Runnable {
@@ -75,6 +80,13 @@ class VideoActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //récupération de l'id du videoView
+        videoURL = "https://youtu.be/gp_k0UVOYMw"
+
+        video = findViewById<VideoView>(R.id.videoView)
+        video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.reface_2022_12_05_11_22_43)
+        video.start()
 
         binding = ActivityVideoBinding.inflate(layoutInflater)
         setContentView(binding.root)
