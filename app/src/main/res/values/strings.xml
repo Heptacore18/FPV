@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FPV</string>
+    <string name="Title1">Bienvenu dans l\'assistant FPV</string>
+    <string name="button_acces_gyroscope">Données du gyroscope</string>
+    <string name="button_acces_video">Accéder à la vidéo</string>
+    <string name="z">z :</string>
+    <string name="y">y :</string>
+    <string name="x">x :</string>
+    <string name="x_value">0</string>
+    <string name="y_value">0</string>
+    <string name="z_value">0</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>
