@@ -21,9 +21,9 @@ class DonneesGyroscope : AppCompatActivity(), SensorEventListener {
     private lateinit var textView_zvalue: TextView
     private var minValue by Delegates.notNull<Double>()
 
-    private val socket = Socket("192.168.0.10", 8080) // création du socket
-    private val inputStream = DataInputStream(socket.getInputStream()) // ouverture des entrée
-    private val outputStream = DataOutputStream(socket.getOutputStream()) // ouverture des sorties
+    //private val socket = Socket("192.168.0.10", 8080) // création du socket
+    //private val inputStream = DataInputStream(socket.getInputStream()) // ouverture des entrée
+    //private val outputStream = DataOutputStream(socket.getOutputStream()) // ouverture des sorties
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -66,10 +66,10 @@ class DonneesGyroscope : AppCompatActivity(), SensorEventListener {
             textView_yvalue.text = y.toString() // on affiche toutes les valeurs du gyroscope à l'écran
             textView_zvalue.text = z.toString()
 
-            outputStream.writeFloat(x)
-            outputStream.writeFloat(y) // on envoie chaque variables
-            outputStream.writeFloat(z)
-            outputStream.flush() // on s'assure d'avoir envoyer toute les infos de la sortie et on vide le cache
+            //outputStream.writeFloat(x)
+            //outputStream.writeFloat(y) // on envoie chaque variables
+            //outputStream.writeFloat(z)
+            //outputStream.flush() // on s'assure d'avoir envoyer toute les infos de la sortie et on vide le cache
 
         }
     }
@@ -79,9 +79,9 @@ class DonneesGyroscope : AppCompatActivity(), SensorEventListener {
     override fun onStop() { // lorsque l'acivité s'arrète complétement
         super.onStop()
 
-        inputStream.close()
-        outputStream.close() // on ferme toutes les entrées/sorties et le socket
-        socket.close()
+        //inputStream.close()
+        //outputStream.close() // on ferme toutes les entrées/sorties et le socket
+        //socket.close()
     }
 
 }
